@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
 
 /* =======================
    RESET + BASE
@@ -11,26 +12,45 @@
 }
 
 body {
-    background: #0b1220;
+    background: url('images/2024-04-29.jpg') center/cover fixed no-repeat;
     color: #e5e7eb;
     line-height: 1.6;
 }
+
+/* OVERLAY FOR WHOLE PAGE */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+
 
 /* =======================
    HERO
 ======================= */
 .hero {
-    background: linear-gradient(135deg, #0f172a, #111827);
-    padding: 90px 20px;
+    position: relative;
+    background: url('images/excavator.jpg') center/cover no-repeat;
+    padding: 100px 20px;
     text-align: center;
-    border-bottom: 3px solid #f97316;
 }
 
+/* DARK OVERLAY */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+/* KEEP TEXT ABOVE OVERLAY */
 .hero h1 {
+    position: relative;
+    z-index: 1;
     font-size: 2.8rem;
     font-weight: 800;
-    letter-spacing: -1px;
-    color: #ffffff;
+    color: white;
 }
 
 /* =======================
@@ -168,4 +188,47 @@ button:hover {
     .card {
         padding: 18px;
     }
+}
+
+/* =======================
+   HERO BUTTONS
+======================= */
+.hero-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+
+.btn {
+    text-decoration: none;
+    background: #f97316;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    background: #ea580c;
+    transform: translateY(-2px);
+}
+
+/* SECOND BUTTON STYLE */
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #f97316;
+}
+
+.btn-secondary:hover {
+    background: #f97316;
+}
+
+/* SMOOTH SCROLL */
+html {
+    scroll-behavior: smooth;
 }
