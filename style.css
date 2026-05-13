@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* =======================
+   RESET + BASE
+======================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: #0b1220;
+    color: #e5e7eb;
+    line-height: 1.6;
+}
+
+/* =======================
+   HERO
+======================= */
+.hero {
+    background: linear-gradient(135deg, #0f172a, #111827);
+    padding: 90px 20px;
+    text-align: center;
+    border-bottom: 3px solid #f97316;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #ffffff;
+}
+
+/* =======================
+   LAYOUT
+======================= */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* =======================
+   CARD SYSTEM (KEY UPGRADE)
+======================= */
+.card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* =======================
+   SECTIONS
+======================= */
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #f97316;
+    font-weight: 700;
+}
+
+/* =======================
+   ABOUT TEXT
+======================= */
+.about p {
+    margin-bottom: 14px;
+    font-size: 1.05rem;
+    color: #cbd5e1;
+}
+
+/* =======================
+   SERVICES GRID
+======================= */
+.services ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+
+.services li {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 14px;
+    border-radius: 10px;
+    border-left: 3px solid #f97316;
+    font-size: 0.95rem;
+    color: #e5e7eb;
+}
+
+/* =======================
+   FORM (HIGH CONVERSION)
+======================= */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+}
+
+input,
+textarea {
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #0f172a;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.2s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #f97316;
+    box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2);
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* =======================
+   BUTTON
+======================= */
+button {
+    background: #f97316;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background: #ea580c;
+    transform: translateY(-2px);
+}
+
+/* =======================
+   MOBILE OPTIMIZATION
+======================= */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 20px 15px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+}
