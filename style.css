@@ -232,3 +232,50 @@ button:hover {
 html {
     scroll-behavior: smooth;
 }
+
+/* =======================
+   SERVICE EXPAND
+======================= */
+
+/* =======================
+   SERVICE EXPAND (DESKTOP + MOBILE)
+======================= */
+
+.services li {
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* hover effect */
+.services li:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* description hidden by default */
+.services .desc {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    margin-top: 6px;
+    transition: max-height 0.3s ease;
+}
+
+/* expand on hover (DESKTOP) */
+.services li:hover .desc {
+    max-height: 60px;
+}
+
+/* expand on click (MOBILE / JS) */
+.services li.active .desc {
+    max-height: 60px;
+}
+
+/* IMPORTANT: disable hover on touch devices */
+@media (hover: none) {
+    .services li:hover .desc {
+        max-height: 0;
+    }
+}
