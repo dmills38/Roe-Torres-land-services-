@@ -4,15 +4,17 @@ document.addEventListener("DOMContentLoaded", () => {
     services.forEach(service => {
         service.addEventListener("click", () => {
 
-            // close all others
+            const isActive = service.classList.contains("active");
+
+            // close all
             services.forEach(item => {
-                if (item !== service) {
-                    item.classList.remove("active");
-                }
+                item.classList.remove("active");
             });
 
-            // toggle current
-            service.classList.toggle("active");
+            // only open if it wasn't already open
+            if (!isActive) {
+                service.classList.add("active");
+            }
         });
     });
 });
