@@ -281,3 +281,19 @@ html {
         max-height: 80px;
     }
 }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #e5e7eb;
+    font-size: 0.9rem;
+}
+
+.footer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px; /* space between buttons */
+    margin-top: 10px;
+}
