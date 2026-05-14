@@ -277,10 +277,6 @@ html {
         background: rgba(255, 255, 255, 0.05) !important;
     }
 
-    .services li:hover .desc {
-        max-height: 0 !important;
-    }
-
     .services li.active .desc {
         max-height: 80px;
     }
