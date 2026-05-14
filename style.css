@@ -233,9 +233,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* =======================
-   SERVICE EXPAND
-======================= */
 
 /* =======================
    SERVICE EXPAND (DESKTOP + MOBILE)
@@ -263,9 +260,11 @@ html {
     transition: max-height 0.3s ease;
 }
 
-/* expand on hover (DESKTOP) */
-.services li:hover .desc {
-    max-height: 60px;
+/* expand on hover (DESKTOP ONLY FIX) */
+@media (hover: hover) {
+    .services li:hover .desc {
+        max-height: 60px;
+    }
 }
 
 /* expand on click (MOBILE / JS) */
@@ -273,9 +272,15 @@ html {
     max-height: 60px;
 }
 
-/* IMPORTANT: disable hover on touch devices */
+/* IMPORTANT: disable hover expansion on touch devices ONLY */
 @media (hover: none) {
     .services li:hover .desc {
         max-height: 0;
+    }
+
+    /* FIX: also neutralize hover background/transform on mobile */
+    .services li:hover {
+        transform: none;
+        background: rgba(255, 255, 255, 0.05);
     }
 }
