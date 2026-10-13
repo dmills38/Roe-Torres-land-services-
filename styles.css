@@ -1,0 +1,1377 @@
+/* =====================================================
+   300 FEET WIND
+   Modern Wind Energy Design
+===================================================== */
+
+
+/* =========================
+   DESIGN VARIABLES
+========================= */
+
+:root {
+
+    /* Brand colors */
+    --storm: #071923;
+    --storm-light: #0d2936;
+    --storm-soft: #123746;
+
+    --wind-blue: #00a8e8;
+    --wind-blue-dark: #0088bd;
+    --sky: #56c8f5;
+    --ice: #e9f8fd;
+
+    --steel: #5f7480;
+    --steel-light: #a9bac2;
+
+    --safety: #ff9f1c;
+
+    --white: #ffffff;
+    --off-white: #f7fbfc;
+    --background: #eef5f7;
+
+    --text: #17313d;
+    --text-light: #607782;
+
+    --border: #d5e3e8;
+
+    --max-width: 1180px;
+
+    --shadow-small:
+        0 8px 24px rgba(7, 25, 35, 0.08);
+
+    --shadow:
+        0 22px 55px rgba(7, 25, 35, 0.14);
+
+    --transition: 200ms ease;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: var(--text);
+    background: var(--white);
+
+    line-height: 1.65;
+}
+
+img {
+    display: block;
+
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+.container {
+    width: min(90%, var(--max-width));
+
+    margin: 0 auto;
+}
+
+section {
+    padding: 120px 0;
+}
+
+.section-label,
+.eyebrow {
+    margin-bottom: 16px;
+
+    color: var(--wind-blue);
+
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+}
+
+.section-heading {
+    max-width: 720px;
+
+    margin-bottom: 60px;
+}
+
+.section-heading h2,
+.intro h2,
+.why-us h2,
+.about h2,
+.contact h2 {
+    margin-bottom: 22px;
+
+    color: var(--storm);
+
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+
+    line-height: 1.08;
+
+    letter-spacing: -0.035em;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 100;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.15);
+}
+
+.nav {
+    min-height: 92px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Logo */
+
+.logo {
+    color: var(--white);
+
+    font-size: 1.25rem;
+    font-weight: 900;
+
+    letter-spacing: 0.07em;
+}
+
+.logo span {
+    color: var(--sky);
+}
+
+
+/* Navigation */
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+
+    gap: 34px;
+
+    color: var(--white);
+
+    font-size: 0.88rem;
+    font-weight: 650;
+}
+
+.nav-links a {
+    position: relative;
+
+    transition:
+        color var(--transition),
+        opacity var(--transition);
+}
+
+.nav-links a:not(.nav-button)::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--sky);
+
+    transition: width var(--transition);
+}
+
+.nav-links a:not(.nav-button):hover::after {
+    width: 100%;
+}
+
+.nav-button {
+    padding: 11px 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    transition:
+        background var(--transition),
+        border-color var(--transition);
+}
+
+.nav-button:hover {
+    background: var(--wind-blue);
+
+    border-color: var(--wind-blue);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+
+    min-height: 820px;
+
+    display: flex;
+    align-items: center;
+
+    padding-top: 160px;
+
+    color: var(--white);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4, 20, 29, 0.94) 0%,
+            rgba(4, 20, 29, 0.76) 45%,
+            rgba(4, 20, 29, 0.25) 100%
+        ),
+        url("2024-04-29.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Blue atmosphere at bottom of hero */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--wind-blue),
+            var(--sky),
+            transparent
+        );
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+.eyebrow {
+    color: var(--sky);
+}
+
+.hero h1 {
+    max-width: 920px;
+
+    margin-bottom: 30px;
+
+    color: var(--white);
+
+    font-size: clamp(3.5rem, 7vw, 6.8rem);
+    font-weight: 800;
+
+    line-height: 0.95;
+
+    letter-spacing: -0.055em;
+}
+
+.hero h1 span {
+    color: var(--sky);
+}
+
+.hero-text {
+    max-width: 620px;
+
+    margin-bottom: 40px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 1.15rem;
+}
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.button {
+    display: inline-block;
+
+    padding: 15px 26px;
+
+    font-size: 0.9rem;
+    font-weight: 750;
+
+    letter-spacing: 0.01em;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.button-primary {
+    color: var(--white);
+
+    background: var(--wind-blue);
+
+    box-shadow:
+        0 10px 30px rgba(0, 168, 232, 0.25);
+}
+
+.button-primary:hover {
+    background: var(--wind-blue-dark);
+
+    box-shadow:
+        0 14px 35px rgba(0, 168, 232, 0.32);
+}
+
+.button-secondary {
+    color: var(--white);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.55);
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    backdrop-filter: blur(5px);
+}
+
+.button-secondary:hover {
+    background:
+        rgba(255, 255, 255, 0.12);
+}
+
+.button-light {
+    color: var(--storm);
+
+    background: var(--white);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    position: relative;
+
+    background: var(--white);
+}
+
+.intro-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 100px;
+
+    align-items: start;
+}
+
+.intro-grid > div:last-child {
+    max-width: 560px;
+
+    padding-left: 35px;
+
+    border-left: 3px solid var(--wind-blue);
+
+    color: var(--text-light);
+
+    font-size: 1.06rem;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf7fa 0%,
+            #f9fcfd 55%,
+            #e5f3f7 100%
+        );
+}
+
+
+/* Decorative wind-like background circle */
+
+.services::before {
+    content: "";
+
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    right: -250px;
+    top: -250px;
+
+    border: 80px solid rgba(0, 168, 232, 0.05);
+
+    border-radius: 50%;
+}
+
+.services-grid {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+
+    z-index: 2;
+}
+
+.service-card {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 48px;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    border: 1px solid rgba(213, 227, 232, 0.8);
+
+    box-shadow: var(--shadow-small);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+.service-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--wind-blue),
+            var(--sky)
+        );
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(0, 168, 232, 0.35);
+
+    box-shadow: var(--shadow);
+}
+
+.service-number {
+    display: block;
+
+    margin-bottom: 40px;
+
+    color: var(--wind-blue);
+
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+}
+
+.service-card h3 {
+    margin-bottom: 18px;
+
+    color: var(--storm);
+
+    font-size: 1.8rem;
+
+    letter-spacing: -0.02em;
+}
+
+.service-card p {
+    color: var(--text-light);
+}
+
+.service-card ul {
+    list-style: none;
+
+    margin-top: 30px;
+}
+
+.service-card li {
+    position: relative;
+
+    padding: 11px 0 11px 25px;
+
+    border-bottom: 1px solid var(--border);
+
+    color: var(--text);
+
+    font-size: 0.92rem;
+}
+
+.service-card li::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 20px;
+
+    width: 8px;
+    height: 8px;
+
+    background: var(--wind-blue);
+
+    border-radius: 50%;
+}
+
+
+/* =========================
+   WHY US
+========================= */
+
+.why-us {
+    position: relative;
+
+    overflow: hidden;
+
+    color: var(--white);
+
+    background:
+        linear-gradient(
+            120deg,
+            var(--storm) 0%,
+            var(--storm-light) 70%,
+            #0c4055 100%
+        );
+}
+
+
+/* Atmospheric glow */
+
+.why-us::after {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    right: -150px;
+    bottom: -250px;
+
+    background:
+        rgba(0, 168, 232, 0.12);
+
+    filter: blur(80px);
+
+    border-radius: 50%;
+}
+
+.why-grid {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 110px;
+
+    z-index: 2;
+}
+
+.why-us h2 {
+    color: var(--white);
+}
+
+.why-content > p:not(.section-label) {
+    max-width: 520px;
+
+    color:
+        rgba(255, 255, 255, 0.68);
+}
+
+.why-point {
+    display: grid;
+
+    grid-template-columns: 50px 1fr;
+
+    gap: 22px;
+
+    padding: 28px 0;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.12);
+}
+
+.why-point > span {
+    color: var(--sky);
+
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.why-point h3 {
+    margin-bottom: 8px;
+
+    color: var(--white);
+
+    font-size: 1.2rem;
+}
+
+.why-point p {
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.62);
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects {
+    background: var(--white);
+}
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.project-card {
+    overflow: hidden;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow-small);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow);
+}
+
+.project-image {
+    height: 350px;
+
+    background-size: cover;
+    background-position: center;
+
+    transition:
+        transform 500ms ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.045);
+}
+
+.project-one {
+    background-image:
+        url("images/project-1.jpg");
+}
+
+.project-two {
+    background-image:
+        url("images/project-2.jpg");
+}
+
+.project-three {
+    background-image:
+        url("images/project-3.jpg");
+}
+
+.project-info {
+    position: relative;
+
+    padding: 26px;
+
+    background: var(--white);
+}
+
+.project-info::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 26px;
+
+    width: 45px;
+    height: 3px;
+
+    background: var(--wind-blue);
+}
+
+.project-info p {
+    margin-bottom: 6px;
+
+    color: var(--wind-blue);
+
+    font-size: 0.68rem;
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+}
+
+.project-info h3 {
+    margin: 0;
+
+    color: var(--storm);
+
+    font-size: 1.15rem;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    background: var(--off-white);
+}
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(0, 0.95fr);
+
+    gap: 90px;
+
+    align-items: center;
+}
+
+.about-image {
+    min-height: 550px;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(7, 25, 35, 0.05),
+            rgba(7, 25, 35, 0.18)
+        ),
+        url("image000001.jpeg");
+
+    background-size: cover;
+    background-position: center;
+
+    box-shadow: var(--shadow);
+}
+
+.about-content p:not(.section-label) {
+    color: var(--text-light);
+}
+
+.text-link {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding-bottom: 5px;
+
+    color: var(--wind-blue);
+
+    font-weight: 750;
+
+    border-bottom:
+        2px solid var(--wind-blue);
+
+    transition:
+        color var(--transition),
+        border-color var(--transition);
+}
+
+.text-link:hover {
+    color: var(--wind-blue-dark);
+
+    border-color: var(--wind-blue-dark);
+}
+
+
+/* =========================
+   CAREERS
+========================= */
+
+.careers {
+    position: relative;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--white),
+            var(--ice)
+        );
+}
+
+.careers .section-heading p:not(.section-label) {
+    max-width: 600px;
+
+    color: var(--text-light);
+}
+
+.careers-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.career-card {
+    position: relative;
+
+    min-height: 320px;
+
+    overflow: hidden;
+
+    padding: 42px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: var(--storm);
+
+    color: var(--white);
+
+    box-shadow: var(--shadow-small);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.career-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 5px;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            var(--sky),
+            var(--wind-blue)
+        );
+}
+
+.career-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow);
+}
+
+.career-type {
+    margin-bottom: 14px;
+
+    color: var(--sky);
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+}
+
+.career-card h3 {
+    margin-bottom: 16px;
+
+    color: var(--white);
+
+    font-size: 1.6rem;
+}
+
+.career-card p {
+    max-width: 470px;
+
+    color:
+        rgba(255, 255, 255, 0.65);
+}
+
+.career-link {
+    position: relative;
+
+    width: fit-content;
+
+    margin-top: 30px;
+
+    color: var(--sky);
+
+    font-weight: 750;
+
+    z-index: 2;
+}
+
+.career-link:hover {
+    color: var(--white);
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    position: relative;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    color: var(--white);
+
+    background:
+        linear-gradient(
+            135deg,
+            #008fc7 0%,
+            var(--wind-blue) 45%,
+            #40c4f3 100%
+        );
+}
+
+.contact::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    left: -300px;
+    top: -300px;
+
+    border:
+        100px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 50%;
+}
+
+.contact-content {
+    position: relative;
+
+    max-width: 800px;
+
+    z-index: 2;
+}
+
+.contact .section-label {
+    color:
+        rgba(255, 255, 255, 0.72);
+}
+
+.contact h2 {
+    color: var(--white);
+}
+
+.contact p:not(.section-label) {
+    max-width: 620px;
+
+    margin: 0 auto 38px;
+
+    color:
+        rgba(255, 255, 255, 0.82);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 60px 0;
+
+    background: #04131b;
+
+    color:
+        rgba(255, 255, 255, 0.55);
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-logo {
+    display: inline-block;
+
+    margin-bottom: 16px;
+}
+
+.footer-content p {
+    margin-bottom: 8px;
+}
+
+.copyright {
+    font-size: 0.78rem;
+}
+
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+a:focus-visible,
+button:focus-visible {
+    outline:
+        3px solid var(--safety);
+
+    outline-offset: 4px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+    section {
+        padding: 85px 0;
+    }
+
+    .nav {
+        min-height: auto;
+
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 18px;
+
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        min-height: 720px;
+
+        padding-top: 190px;
+
+        background-position: center;
+    }
+
+    .intro-grid,
+    .services-grid,
+    .why-grid,
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-grid,
+    .why-grid,
+    .about-grid {
+        gap: 50px;
+    }
+
+    .intro-grid > div:last-child {
+        padding-left: 25px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-image {
+        min-height: 430px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: min(92%, var(--max-width));
+    }
+
+    section {
+        padding: 72px 0;
+    }
+
+    .nav-links {
+        gap: 12px;
+
+        font-size: 0.78rem;
+    }
+
+    .nav-button {
+        padding: 8px 12px;
+    }
+
+    .hero {
+        min-height: 680px;
+
+        padding-top: 200px;
+
+        background:
+            linear-gradient(
+                rgba(4, 20, 29, 0.82),
+                rgba(4, 20, 29, 0.82)
+            ),
+            url("images/hero-wind.jpg");
+
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size:
+            clamp(2.9rem, 13vw, 4.6rem);
+
+        line-height: 0.98;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .intro-grid > div:last-child {
+        padding-left: 20px;
+    }
+
+    .services-grid,
+    .projects-grid,
+    .careers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card,
+    .career-card {
+        padding: 32px;
+    }
+
+    .project-image {
+        height: 290px;
+    }
+
+    .about-image {
+        min-height: 340px;
+    }
+
+}
+
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+.contact-content {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.contact-form-card {
+    margin-top: 45px;
+    padding: 45px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    text-align: left;
+}
+
+.contact-form-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: var(--storm);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px 18px;
+
+    border: 1px solid var(--border);
+    border-radius: 0;
+
+    background: var(--off-white);
+    color: var(--text);
+
+    font-family: inherit;
+    font-size: 0.95rem;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--steel);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--wind-blue);
+
+    box-shadow:
+        0 0 0 3px rgba(0, 168, 232, 0.12);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-submit {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .contact-form-card {
+        padding: 25px;
+        margin-top: 30px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 13px 15px;
+    }
+
+}
