@@ -1,6 +1,7 @@
+
 /* =====================================================
-   300 FEET WIND
-   Modern Wind Energy Design
+   ROE TORRES LAND SERVICES
+   Modern Land Services Design
 ===================================================== */
 
 
@@ -11,36 +12,36 @@
 :root {
 
     /* Brand colors */
-    --storm: #071923;
-    --storm-light: #0d2936;
-    --storm-soft: #123746;
+    --storm: #142d25;
+    --storm-light: #28523e;
+    --storm-soft: #527c5b;
 
-    --wind-blue: #00a8e8;
-    --wind-blue-dark: #0088bd;
-    --sky: #56c8f5;
-    --ice: #e9f8fd;
+    --wind-blue: #527c5b;
+    --wind-blue-dark: #28523e;
+    --sky: #a6b69b;
+    --ice: #e4e9df;
 
-    --steel: #5f7480;
-    --steel-light: #a9bac2;
+    --steel: #56645b;
+    --steel-light: #a6b69b;
 
-    --safety: #ff9f1c;
+    --safety: #c19a58;
 
     --white: #ffffff;
-    --off-white: #f7fbfc;
-    --background: #eef5f7;
+    --off-white: #f7f6f1;
+    --background: #f0f2ec;
 
-    --text: #17313d;
-    --text-light: #607782;
+    --text: #1b2922;
+    --text-light: #66756a;
 
-    --border: #d5e3e8;
+    --border: #d8dfd5;
 
     --max-width: 1180px;
 
     --shadow-small:
-        0 8px 24px rgba(7, 25, 35, 0.08);
+        0 8px 24px rgba(20, 45, 37, 0.08);
 
     --shadow:
-        0 22px 55px rgba(7, 25, 35, 0.14);
+        0 22px 55px rgba(20, 45, 37, 0.14);
 
     --transition: 200ms ease;
 }
@@ -181,6 +182,7 @@ section {
 /* Logo */
 
 .logo {
+    text-align: center;
     color: var(--white);
 
     font-size: 1.25rem;
@@ -274,9 +276,9 @@ section {
     background:
         linear-gradient(
             90deg,
-            rgba(4, 20, 29, 0.94) 0%,
-            rgba(4, 20, 29, 0.76) 45%,
-            rgba(4, 20, 29, 0.25) 100%
+            rgba(14, 35, 26, 0.94) 0%,
+            rgba(14, 35, 26, 0.76) 45%,
+            rgba(14, 35, 26, 0.25) 100%
         ),
         url("2024-04-29.jpg");
 
@@ -285,7 +287,7 @@ section {
 }
 
 
-/* Blue atmosphere at bottom of hero */
+/* Forest green accent at bottom of hero */
 
 .hero::after {
     content: "";
@@ -385,14 +387,14 @@ section {
     background: var(--wind-blue);
 
     box-shadow:
-        0 10px 30px rgba(0, 168, 232, 0.25);
+        0 10px 30px rgba(40, 82, 62, 0.25);
 }
 
 .button-primary:hover {
     background: var(--wind-blue-dark);
 
     box-shadow:
-        0 14px 35px rgba(0, 168, 232, 0.32);
+        0 14px 35px rgba(40, 82, 62, 0.32);
 }
 
 .button-secondary {
@@ -469,14 +471,14 @@ section {
     background:
         linear-gradient(
             135deg,
-            #edf7fa 0%,
-            #f9fcfd 55%,
-            #e5f3f7 100%
+            #eaf0e8 0%,
+            #f7f8f3 55%,
+            #dfe9dc 100%
         );
 }
 
 
-/* Decorative wind-like background circle */
+/* Decorative background circle */
 
 .services::before {
     content: "";
@@ -489,7 +491,7 @@ section {
     right: -250px;
     top: -250px;
 
-    border: 80px solid rgba(0, 168, 232, 0.05);
+    border: 80px solid rgba(40, 82, 62, 0.05);
 
     border-radius: 50%;
 }
@@ -516,7 +518,7 @@ section {
     background:
         rgba(255, 255, 255, 0.92);
 
-    border: 1px solid rgba(213, 227, 232, 0.8);
+    border: 1px solid rgba(166, 182, 155, 0.8);
 
     box-shadow: var(--shadow-small);
 
@@ -549,7 +551,7 @@ section {
     transform: translateY(-6px);
 
     border-color:
-        rgba(0, 168, 232, 0.35);
+        rgba(40, 82, 62, 0.35);
 
     box-shadow: var(--shadow);
 }
@@ -632,7 +634,7 @@ section {
             120deg,
             var(--storm) 0%,
             var(--storm-light) 70%,
-            #0c4055 100%
+            #376449 100%
         );
 }
 
@@ -651,7 +653,7 @@ section {
     bottom: -250px;
 
     background:
-        rgba(0, 168, 232, 0.12);
+        rgba(40, 82, 62, 0.12);
 
     filter: blur(80px);
 
@@ -853,8 +855,8 @@ section {
 
     background:
         linear-gradient(
-            rgba(7, 25, 35, 0.05),
-            rgba(7, 25, 35, 0.18)
+            rgba(20, 45, 37, 0.05),
+            rgba(20, 45, 37, 0.18)
         ),
         url("image000001.jpeg");
 
@@ -1032,9 +1034,9 @@ section {
     background:
         linear-gradient(
             135deg,
-            #008fc7 0%,
+            #142d25 0%,
             var(--wind-blue) 45%,
-            #40c4f3 100%
+            #527c5b 100%
         );
 }
 
@@ -1089,7 +1091,7 @@ section {
 footer {
     padding: 60px 0;
 
-    background: #04131b;
+    background: #10251d;
 
     color:
         rgba(255, 255, 255, 0.55);
@@ -1225,8 +1227,8 @@ button:focus-visible {
 
         background:
             linear-gradient(
-                rgba(4, 20, 29, 0.82),
-                rgba(4, 20, 29, 0.82)
+                rgba(14, 35, 26, 0.82),
+                rgba(14, 35, 26, 0.82)
             ),
             url("2024-04-29.jpg");
 
@@ -1344,7 +1346,7 @@ button:focus-visible {
     border-color: var(--wind-blue);
 
     box-shadow:
-        0 0 0 3px rgba(0, 168, 232, 0.12);
+        0 0 0 3px rgba(40, 82, 62, 0.12);
 }
 
 .form-group textarea {
